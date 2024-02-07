@@ -4,8 +4,8 @@ namespace App\Exam\Controllers;
 
 use App\Exam\Actions\ProcessAnswer;
 use App\Exam\Models\Question;
+use App\Exam\Requests\ExamRequest;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class ExamController extends Controller
 {
@@ -22,9 +22,10 @@ class ExamController extends Controller
     /**
      * Get result from the exam
      *
+     * @param \App\Exam\Requests\ExamRequest $request
      *  @return \Illuminate\Http\Response
      */
-    public function result(Request $request)
+    public function result(ExamRequest $request)
     {
         $result = (new ProcessAnswer)
             ->setRequest($request)

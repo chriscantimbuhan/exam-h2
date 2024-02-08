@@ -1,7 +1,3 @@
-@php
-    $i = 0;
-@endphp
-
 @extends('layouts.master')
 
 @section('content')
@@ -13,17 +9,13 @@
                 </div>
                 <div class="card-body">
                     <div class="bg-danger p-3 m-2 border-danger text-white d-none" id="errorMessaege"></div>
+
                     <form id="examForm">
                         @csrf
 
-                        @foreach ($data as $item)
-                            <div class="border border-2 p-3 m-2">
-                                <label class="form-label">{{ $i += 1 }}. {{ $item->question }}</label>
-                                @foreach ($item->choices as $choice)
-                                    <x-radio-button value="{{ $choice->weight }}" label="{{ strtoupper($choice->weight).'. '.$choice->details }}" name="{{ $i }}"></x-radio-button>
-                                @endforeach
-                            </div>
-                        @endforeach
+                        @for ($i=0; $i < count($data); $i++)
+                            <x-question :records="$data" :index="$i" />
+                        @endfor
 
                         <button type="submit" class="btn btn-primary mt-3" id="btnSumbitExam">Submit</button>
                     </form>

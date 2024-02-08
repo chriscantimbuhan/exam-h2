@@ -9,17 +9,24 @@
 - Composer v2.*
 - GIT v2.*
 
+## Tech Stack:
+- PHP - Laravel Framework
+- HTML - Blade Templating
+- CSS - Bootstrap
+- Javascript - JQuery
+- MySql
+
 ## Installation
 
-Clone the project to your desired folder
+Clone the project to your project folder
 
 ```sh
-git clone https://github.com/chriscantimbuhan/exam-h2.git {desired_folder}
+git clone https://github.com/chriscantimbuhan/exam-h2.git {project_folder}
 ```
 
 Navigate to the project folder via terminal.
 ```sh
-cd project_folder
+cd {project_folder}
 ```
 
 Create your MySql database for the project on your preference.

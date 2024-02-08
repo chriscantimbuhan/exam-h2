@@ -5,7 +5,8 @@
         <x-radio-button
             :value="$choice->weight"
             :label="strtoupper($choice->weight).'. '.$choice->details"
-            :name="$index + 1" />
+            :name="$index + 1"
+        />
     @endforeach
 
 </div>

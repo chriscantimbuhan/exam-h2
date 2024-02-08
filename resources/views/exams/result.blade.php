@@ -9,7 +9,7 @@
                         <thead>
                             <tr>
                                 @foreach ($data->keys() as $value)
-                                    <th>{{ strtoupper($value) }}</th>
+                                    <th>{{ strtoupper(str_replace('_', ' ',$value)) }}</th>
                                 @endforeach
                             </tr>
                         </thead>

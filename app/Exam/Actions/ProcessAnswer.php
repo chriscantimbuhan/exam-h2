@@ -27,7 +27,9 @@ class ProcessAnswer
      */
     public function execute()
     {
-        return $this->totalAnswersPerChoice()->merge($this->getResult());
+        return $this->totalAnswersPerChoice()
+            ->merge(['total_answers' => $this->totalAnswersPerChoice()->sum()])
+            ->merge($this->getResult());
     }
 
    /**
